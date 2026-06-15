@@ -23,6 +23,8 @@ app.use(
   phonebookRoutes
 );
 
-app.listen(3001, () => {
-  console.log("Server Running");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Server Running on port ${PORT}`);
 });

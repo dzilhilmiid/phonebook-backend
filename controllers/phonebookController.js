@@ -296,12 +296,11 @@ const uploadAvatar = async (
     );
 
   } catch (error) {
-
+    console.error("GET PHONEBOOKS ERROR:");
     console.log(error);
 
     res.status(500).json({
-      message:
-        "Internal Server Error",
+      message: error.message,
     });
 
   }
