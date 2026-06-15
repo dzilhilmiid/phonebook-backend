@@ -244,14 +244,12 @@ const deletePhonebook = async (
     });
 
   } catch (error) {
+  console.error("GET PHONEBOOKS ERROR:");
+  console.error(error);
 
-    console.log(error);
-
-    res.status(500).json({
-      message:
-        "Internal Server Error",
-    });
-
+  res.status(500).json({
+    message: error.message,
+  });
   }
 };
 
