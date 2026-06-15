@@ -7,6 +7,11 @@ const pool = new Pool({
   ssl: {
     rejectUnauthorized: false,
   },
+  connectionTimeoutMillis: 5000,
+});
+
+pool.on("error", (err) => {
+  console.error("Unexpected DB error:", err);
 });
 
 module.exports = pool;
