@@ -28,6 +28,20 @@ app.use(
   phonebookRoutes
 );
 
+app.get("/", (req, res) => {
+  res.json({ status: "OK" });
+});
+
+app.get("/test-db", async (req, res) => {
+  try {
+    const pool = require("./db");
+    const result = await pool.query("SELECT NOW()");
+    res.json(result.rows[0]);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
+
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, "0.0.0.0", () => {
