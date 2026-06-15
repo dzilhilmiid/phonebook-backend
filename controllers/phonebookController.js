@@ -63,13 +63,13 @@ const getPhonebooks = async (
       total,
     });
 
-  } catch (error) {
-    console.log(error);
+  }  catch (error) {
+  console.error("GET PHONEBOOKS ERROR:");
+  console.error(error);
 
-    res.status(500).json({
-      message:
-        "Internal Server Error",
-    });
+  res.status(500).json({
+    message: error.message,
+  });
   }
 };
 
@@ -101,14 +101,13 @@ const createPhonebook = async (
       result.rows[0]
     );
 
-  } catch (error) {
+  }  catch (error) {
+  console.error("GET PHONEBOOKS ERROR:");
+  console.error(error);
 
-    console.log(error);
-
-    res.status(500).json({
-      message:
-        "Internal Server Error",
-    });
+  res.status(500).json({
+    message: error.message,
+  });
 
   }
 };
@@ -144,14 +143,13 @@ const getPhonebook = async (
       result.rows[0]
     );
 
-  } catch (error) {
+  }  catch (error) {
+  console.error("GET PHONEBOOKS ERROR:");
+  console.error(error);
 
-    console.log(error);
-
-    res.status(500).json({
-      message:
-        "Internal Server Error",
-    });
+  res.status(500).json({
+    message: error.message,
+  });
 
   }
 };
@@ -200,14 +198,13 @@ const updatePhonebook = async (
       result.rows[0]
     );
 
-  } catch (error) {
+  }  catch (error) {
+  console.error("GET PHONEBOOKS ERROR:");
+  console.error(error);
 
-    console.log(error);
-
-    res.status(500).json({
-      message:
-        "Internal Server Error",
-    });
+  res.status(500).json({
+    message: error.message,
+  });
 
   }
 };
